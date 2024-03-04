@@ -1,5 +1,5 @@
 # Sử dụng image Node.js làm base
-FROM node:14
+FROM node:21.6.1
 
 # Đặt thư mục làm việc trong container
 WORKDIR /usr/src/app
