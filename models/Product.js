@@ -13,4 +13,12 @@ const productSchema = new mongoose.Schema({
 
 });
 
+productSchema.index({ category1: 1 });
+productSchema.index({ category2: 1 });
+productSchema.index({ category3: 1 });
+productSchema.index({ category4: 1 });
+productSchema.index({ category5: 1 });
+
+
+
 module.exports = mongoose.model('products', productSchema);
