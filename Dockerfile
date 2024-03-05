@@ -1,20 +1,14 @@
-# Sử dụng image Node.js làm base
-FROM node:21.6.1
+FROM node:lts
 
-# Đặt thư mục làm việc trong container
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Sao chép file package.json và package-lock.json vào thư mục làm việc
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json .
 
-# Cài đặt các phụ thuộc
 RUN npm install
 
-# Sao chép tất cả mã nguồn của ứng dụng vào container
 COPY . .
 
-# Mở cổng 3000
 EXPOSE 3000
 
-# Chạy ứng dụng
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
