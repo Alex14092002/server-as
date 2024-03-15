@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
+const brandRoutes = require('./routes/brandRoutes');
 const fs = require('fs'); // Import module for file system operations
 
 const https = require('https');
@@ -26,6 +27,7 @@ mongoose.connect('mongodb://150.95.112.132:27017/data-as', { useNewUrlParser: tr
 
 // Sử dụng routes
 app.use('/api/products', productRoutes);
+app.use('/api/brands' , brandRoutes)
 
 // Lắng nghe cổng HTTPS
 const PORT = process.env.PORT || 3000;
