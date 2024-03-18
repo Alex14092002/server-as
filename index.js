@@ -6,6 +6,7 @@ const productRoutes = require("./routes/productRoutes");
 const brandRoutes = require("./routes/brandRoutes");
 const fs = require("fs"); // Import module for file system operations
 const https = require("https");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -21,7 +22,7 @@ const httpsServer = https.createServer(credentials, app);
 
 // Kết nối tới MongoDB
 mongoose
-	.connect("mongodb://150.95.112.132:27017/data-as", {
+	.connect(process.env.MONGODB_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
