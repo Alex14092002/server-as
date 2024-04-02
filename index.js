@@ -19,10 +19,10 @@ const credentials = { key: privateKey, cert: certificate };
 
 // Sử dụng các credentials cho máy chủ HTTPS
 const httpsServer = https.createServer(credentials, app);
-
+const mongourl = "mongodb://dataas:dataas2024@localhost:27017/data-as"
 // Kết nối tới MongoDB
 mongoose
-	.connect(process.env.MONGODB_URI, {
+	.connect(mongourl ,{
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
